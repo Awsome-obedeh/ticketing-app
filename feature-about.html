@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Tickets</title>
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-color: #4F46E5;
+            --primary-hover: #4338ca;
+            --secondary-color: #10B981;
+            --bg-color: #F9FAFB;
+            --text-main: #111827;
+            --text-muted: #6B7280;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* --- CONTENT SECTIONS --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #1F2937;
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 1rem 0;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.5rem 2rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                🎫 Tickets
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                ☰
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Events</a>
+                <a href="#" style="color: var(--primary-color);">About Us</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Connecting You to the Experiences You Love</h1>
+        <p>From massive concerts in Lagos to exclusive tech meetups in Port Harcourt, we make accessing events seamless, secure, and instant.</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="grid">
+            <!-- Text Content -->
+            <div class="about-content">
+                <h2>Our Mission</h2>
+                <p>Founded with the vision of bridging the gap between event organizers and attendees, Tickets is built for speed and reliability. We believe that securing a spot at your favorite event shouldn't be a hassle.</p>
+                
+                <p>Whether it's an intimate creative workshop or a stadium-filling festival, our platform handles high-volume traffic securely, ensuring you get your ticket delivered directly to your mobile device in seconds.</p>
+                
+                <h2>Why Choose Us?</h2>
+                <p>We leverage modern cloud infrastructure to provide a 99.9% uptime. Say goodbye to crashed pages on launch day and fake tickets. Every ticket issued through our system is cryptographically verified.</p>
+            </div>
+
+            <!-- Stats/Visuals -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <span class="stat-number" id="tickets-sold">0</span>
+                    <span class="stat-label">Tickets Sold</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Event Partners</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Cities Covered</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Customer Support</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="current-year"></span> Tickets. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // Toggle hamburger icon to an 'X' visually if desired
+            if (navLinks.classList.contains('active')) {
+                menuBtn.innerHTML = '✕';
+            } else {
+                menuBtn.innerHTML = '☰';
+            }
+        });
+
+        // Simple number counter animation for the stats
+        const ticketCounter = document.getElementById('tickets-sold');
+        let count = 0;
+        const target = 2000000; // 2 Million
+        const duration = 2000; // 2 seconds
+        const increment = target / (duration / 16); // 60fps
+
+        const updateCounter = () => {
+            count += increment;
+            if (count < target) {
+                // Format with commas
+                ticketCounter.innerText = Math.floor(count).toLocaleString() + '+';
+                requestAnimationFrame(updateCounter);
+            } else {
+                ticketCounter.innerText = '2M+';
+            }
+        };
+
+        // Trigger animation on load
+        window.addEventListener('load', updateCounter);
+    </script>
+</body>
+</html>
